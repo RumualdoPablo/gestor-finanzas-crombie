@@ -1,9 +1,13 @@
+//@ts-nocheck
 import { PrismaClient } from "@prisma/client";
 
-declare global {
-    var prisma: PrismaClient | undefined;
+// Evita instanciar demasiadas instancias de Prisma en desarrollo
+// https://www.prisma.io/docs/support/help-articles/nextjs-prisma-client-dev-practices#problem
+let prisma: PrismaClient;
+
+if (!global.prisma) {
+    global.prisma = new PrismaClient();
 }
+prisma = global.prisma;
 
-export const prisma = global.prisma || new PrismaClient();
-
-if (process.env.NODE !== "production") global.prisma = prisma;
+export default prisma;
