@@ -17,7 +17,7 @@ CREATE TABLE `Expense` (
     `amount` INTEGER NOT NULL,
     `date` VARCHAR(191) NOT NULL,
     `userId` INTEGER NOT NULL,
-    `categorie` ENUM('HOGAR', 'COMIDA', 'CUENTAS', 'TRANSPORTE', 'ROPA', 'SALUD', 'OCIO', 'OTROS') NOT NULL,
+    `category` ENUM('HOGAR', 'COMIDA', 'CUENTAS', 'TRANSPORTE', 'ROPA', 'SALUD', 'OCIO', 'OTROS') NOT NULL,
 
     PRIMARY KEY (`id`)
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;

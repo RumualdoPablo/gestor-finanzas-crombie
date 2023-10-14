@@ -38,5 +38,5 @@ model Expense {
   date        String
   user        User             @relation(fields: [userId], references: [id])
   userId      Int
-  categorie   ExpensesCategory
+  category    ExpensesCategory
 }

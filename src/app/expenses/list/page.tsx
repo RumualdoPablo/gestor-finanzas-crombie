@@ -14,7 +14,7 @@ export default async function Page() {
                 <div key={expense.id} className="flex justify-center gap-x-10 gap-y-10">
                     <p>{expense.description}</p>
                     <p>{expense.amount}</p>
-                    <p>{expense.categorie}</p>
+                    <p>{expense.category}</p>
                 </div>
             ))}
             <Link href="/" className="p-4 border-2 m-2 bg-green-300 rounded-lg hover:bg-green-500"> Agregar otro gasto </Link>
