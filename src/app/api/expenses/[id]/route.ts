@@ -1,24 +1,20 @@
 import { NextResponse } from "next/server";
 import prisma from "@/libs/prisma"
+import { json } from "stream/consumers";
 
 export async function GET(req:Request,{ params }: { params: { id: string } }) {
     try {
         const id = Number(params.id)
-        const expenses = await prisma.expense.findUnique({
-            where: { id: id }
+        const expense = await prisma.expense.findUnique({
+            where: {id: id}
         })
-        return NextResponse
-    } catch (error) {
-        if (error instanceof Error) {
-            return NextResponse.json(
-                {
-                    message: error.message
-                },
-                {
-                    status: 500
-                }
-            )
+
+        if(expense){ //Si se encuentra el gasto, devuelve 200 OK con los datos
+            return new NextResponse(JSON.stringify(expense),{status:200})
         }
+
+    } catch (error) {
+        
     }
 }
 
