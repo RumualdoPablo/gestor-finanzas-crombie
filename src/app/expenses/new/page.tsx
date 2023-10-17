@@ -61,7 +61,7 @@ const handleSubmit = (e) => {
         <button className="btn-gastos" type="submit">Agregar Gasto</button>
       </form>
 
-      <Link href="/expenses">Ver todos los gastos</Link>
+      <Link href="/expenses/list">Ver todos los gastos</Link>
     </div>
   )
 }
