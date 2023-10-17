@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import prisma from "@/libs/prisma"
-import { json } from "stream/consumers";
 
 export async function GET(req:Request,{ params }: { params: { id: string } }) {
     try {
@@ -11,10 +10,14 @@ export async function GET(req:Request,{ params }: { params: { id: string } }) {
 
         if(expense){ //Si se encuentra el gasto, devuelve 200 OK con los datos
             return new NextResponse(JSON.stringify(expense),{status:200})
+        } else {
+            return new NextResponse(JSON.stringify({message: "Gasto no encontrado"}),{status:404})
         }
 
     } catch (error) {
-        
+        if (error instanceof Error) {
+            return new NextResponse(JSON.stringify({message: error.message}),{status:500})
+        }
     }
 }
 
