@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 669.14 459.52">
+  <defs>
+    <style>
+      @keyframes lightning {
+	      0%,
+	      50%,
+	      100% {
+		      opacity: 1;
+	      }
+	      25%,
+	      75% {
+		    opacity: 0;
+	      }
+      }
+      .cls-1 {
+        fill: #ee326c;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+        
+      }
+
+      .animation1{
+        animation: lightning 8s ease 0s infinite normal forwards;
+      }
+      .animation2{
+        animation: lightning 8s ease 1s infinite normal forwards;
+      }
+      .animation3{
+        animation: lightning 8s ease 0.5s infinite normal forwards;
+      }
+      .animation4{
+        animation: lightning 8s ease 2s infinite normal forwards;
+      }
+      .animation5{
+        animation: lightning 8s ease 1.5s infinite normal forwards;
+      }
+      .animation6{
+        animation: lightning 8s ease 2.5s infinite normal forwards;
+      }
+
+      .cls-3 {
+        fill: #ffb12a;
+      }
+
+      .cls-4 {
+        fill: #1bb55f;
+      }
+
+      .cls-5 {
+        fill: #25b2e2;
+      }
+
+      .cls-6 {
+        fill: #80319b;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" x="113.69" y=".87" width="265.27" height="15.08"/>
+  <rect class="cls-3" x="492.81" y="203.22" width="150.1" height="15.08"/>
+  <rect class="cls-6" x="265.27" y="122.6" width="403.88" height="13.98"/>
+  <rect class="cls-1" x="265.27" y="324.79" width="341.06" height="15.08"/>
+  <circle class="cls-3" cx="580.01" cy="8.41" r="8.41"/>
+  <rect class="cls-4" y="41.26" width="37.9" height="15.08"/>
+  <rect class="cls-3" x="113.69" y="41.26" width="502.69" height="15.08"/>
+  <rect class="cls-5" x="75.79" y="81.66" width="113.69" height="15.08"/>
+  <rect class="cls-5" y="81.66" width="37.9" height="15.08"/>
+  <rect class="cls-5" x="265.27" y="81.66" width="307.88" height="15.08"/>
+  <circle class="cls-3" cx="341.06" cy="251.15" r="8.41"/>
+  <rect class="cls-5" x="113.69" y="243.61" width="189.48" height="15.08"/>
+  <rect class="cls-5" x="378.95" y="243.61" width="194.19" height="15.08"/>
+  <rect class="cls-1" x="75.79" y="122.05" width="113.69" height="15.08"/>
+  <rect class="cls-3" y="444.44" width="37.9" height="15.08"/>
+  <rect class="cls-3" y=".87" width="37.9" height="15.08"/>
+  <rect class="cls-1" y="122.05" width="37.9" height="15.08"/>
+  <rect class="cls-3" x="75.79" y="444.44" width="189.48" height="15.08"/>
+  <rect class="cls-3" x="265.27" y="365.18" width="303.16" height="15.08"/>
+  <rect class="cls-4" x="309.44" y="445.18" width="263.7" height="13.59"/>
+  <rect class="cls-4" y="162.83" width="151.58" height="15.08"/>
+  <rect class="cls-5" x="189.48" y="162.83" width="227.25" height="15.08"/>
+  <rect class="cls-1" x="492.64" y="162.83" width="113.81" height="15.08"/>
+  <rect class="cls-1" y="203.22" width="378.95" height="15.08"/>
+  <rect class="cls-3" y="243.61" width="37.9" height="15.08"/>
+  <rect class="cls-6" y="284.55" width="37.9" height="13.98"/>
+  <rect class="cls-5" x="113.69" y="284" width="113.69" height="15.08"/>
+  <rect class="cls-1" x="265.27" y="284" width="179.38" height="15.08"/>
+  <rect class="cls-3" y="324.79" width="189.48" height="15.08"/>
+  <rect class="cls-5" y="365.18" width="189.48" height="15.08"/>
+  <rect class="cls-1" y="405.57" width="113.69" height="15.08"/>
+  <rect class="cls-1" x="227.37" y="405.57" width="227.13" height="15.08"/>
+  <circle class="cls-4" cx="378.95" cy="8.41" r="7.9"/>
+  <rect class="cls-3" x="416.85" y=".87" width="121.82" height="15.08"/>
+  <circle class="cls-4" cx="492.64" cy="413.11" r="7.9"/>
+  <rect class="cls-5" x="606.32" y="365.18" width="37.9" height="15.08"/>
+  <polygon class="cls-2 animation1" points="80.49 54.09 55.09 28.7 80.66 3.14 91.21 13.69 76.2 28.7 91.04 43.54 80.49 54.09"/>
+  <path class="cls-2 animation2" d="m237.47,137.06c-15.25,0-27.66-12.41-27.66-27.67s12.41-27.67,27.66-27.67v14.92c-7.03,0-12.74,5.72-12.74,12.74s5.72,12.74,12.74,12.74v14.92Z"/>
+  <path class="cls-2 animation3" d="m444.64,218.23v-14.92c7.03,0,12.74-5.72,12.74-12.74s-5.72-12.74-12.74-12.74v-14.92c15.25,0,27.67,12.41,27.67,27.67s-12.41,27.67-27.67,27.67Z"/>
+  <g class='animation3'>
+    <rect class="cls-2" x="406.19" y="211.01" width="16.23" height="14.92" transform="translate(77.15 543.59) rotate(-71.76)"/>
+    <circle class="cls-2" cx="416.85" cy="210.76" r="7.6"/>
+  </g>
+  <rect class="cls-2 animation4" x="151.58" y="405.65" width="37.89" height="14.92"/>
+  <g class='animation5'>
+  <polygon class="cls-2" points="94.74 299.01 68.33 299.01 68.33 243.69 94.74 243.69 94.74 258.62 83.25 258.62 83.25 284.08 94.74 284.08 94.74 299.01"/>
+  <rect class="cls-2" x="56.84" y="263.89" width="18.95" height="14.92"/>
+  </g>
+  <g class='animation6'>
+  <polygon class="cls-2" points="234.83 380.18 208.42 380.18 208.42 365.26 219.91 365.26 219.91 339.79 208.42 339.79 208.42 324.87 234.83 324.87 234.83 380.18"/>
+  <rect class="cls-2" x="227.37" y="345.06" width="18.95" height="14.92"/>
+  </g>
+</svg>
