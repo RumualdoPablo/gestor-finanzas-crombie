@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/libs/prisma"
 
-export async function GET({ params }: { params: { id: string } }) {
+export async function GET(req:Request,{ params }: { params: { id: string } }) {
     try {
         const id = Number(params.id)
         const expenses = await prisma.expense.findUnique({
@@ -22,7 +22,7 @@ export async function GET({ params }: { params: { id: string } }) {
     }
 }
 
-export async function DELETE({ params }: { params: { id: string } }) {
+export async function DELETE(req:Request,{ params }: { params: { id: string } }) {
     try {
         const id = Number(params.id)
         const deletedExpense = await prisma.expense.delete({

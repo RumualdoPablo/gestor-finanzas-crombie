@@ -17,7 +17,7 @@ export default async function Page() {
                     <p>{expense.category}</p>
                 </div>
             ))}
-            <Link href="/" className="p-4 border-2 m-2 bg-green-300 rounded-lg hover:bg-green-500"> Agregar otro gasto </Link>
+            <Link href="/expenses/new" className="p-4 border-2 m-2 bg-green-300 rounded-lg hover:bg-green-500"> Agregar otro gasto </Link>
         </main>
     )
 }
