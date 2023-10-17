@@ -7,7 +7,7 @@ export async function GET(req:Request,{ params }: { params: { id: string } }) {
         const expenses = await prisma.expense.findUnique({
             where: { id: id }
         })
-        return NextResponse.json(expenses)
+        return NextResponse
     } catch (error) {
         if (error instanceof Error) {
             return NextResponse.json(
