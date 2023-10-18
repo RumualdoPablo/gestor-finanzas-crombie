@@ -6,24 +6,27 @@ import React, { useState } from 'react'
 
 type FormValue = {
   description: string;
-  amount: string;
+  amount: number;
   date: string;
   category: string;
+  user: number;
 }
 
-const Home: React.FC = () => {
+const New: React.FC = () => {
 
   const [formData, setFormData] = useState<FormValue>({
     category: "HOGAR",
+    user: 1,
     date: "",
     description: "",
-    amount: ""
+    amount: 0
   })
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setFormData({
         ...formData,
+        amount: Number(formData.amount),
         [name]: value,
     })
 }
@@ -66,4 +69,4 @@ const handleSubmit = (e) => {
   )
 }
 
-export default Home;
+export default New;

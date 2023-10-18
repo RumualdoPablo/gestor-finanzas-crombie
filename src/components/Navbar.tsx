@@ -3,10 +3,10 @@ import Link from 'next/link'
 
 const Navbar = () => {
     return (
-        <div className='bg-gray-400'>
+        <div className='bg-gray-100 shadow-lg'>
             <nav className='flex justify-between'>
                 <Link href="/">
-                    <h1 className="text-4xl font-semibold m-4 font-principal tracking-wider">CrombieBudget</h1>
+                    <h1 className={"text-4xl font-bold m-4"}>CrombieBudget</h1>
                 </Link>
                 <div className='flex gap-x-4 m-4 items-center '>
                     <div className='text'>

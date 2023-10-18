@@ -1,27 +1,27 @@
 import { NextResponse } from "next/server";
 import prisma from "@/libs/prisma"
 
-export async function GET(req:Request,{ params }: { params: { id: string } }) {
+export async function GET(req: Request, { params }: { params: { id: string } }) {
     try {
         const id = Number(params.id)
         const expense = await prisma.expense.findUnique({
-            where: {id: id}
+            where: { id: id }
         })
 
-        if(expense){ //Si se encuentra el gasto, devuelve 200 OK con los datos
-            return new NextResponse(JSON.stringify(expense),{status:200})
+        if (expense) { //Si se encuentra el gasto, devuelve 200 OK con los datos
+            return NextResponse.json(expense, { status: 200 })
         } else {
-            return new NextResponse(JSON.stringify({message: "Gasto no encontrado"}),{status:404})
+            return new NextResponse(JSON.stringify({ message: "Gasto no encontrado" }), { status: 404 })
         }
 
     } catch (error) {
         if (error instanceof Error) {
-            return new NextResponse(JSON.stringify({message: error.message}),{status:500})
+            return new NextResponse(JSON.stringify({ message: error.message }), { status: 500 })
         }
     }
 }
 
-export async function DELETE(req:Request,{ params }: { params: { id: string } }) {
+export async function DELETE(req: Request, { params }: { params: { id: string } }) {
     try {
         const id = Number(params.id)
         const deletedExpense = await prisma.expense.delete({
@@ -46,13 +46,14 @@ export async function DELETE(req:Request,{ params }: { params: { id: string } })
 
 export async function PUT(req: Request, { params }: { params: { id: string } }) {
     try {
-        const { 
+        const {
             description,
             amount,
             date,
-            category } = await req.json();
+            category
+        } = await req.json();
 
-        const updatedNote = await prisma.expense.update({
+        const updatedExpense = await prisma.expense.update({
             where: {
                 id: Number(params.id),
             },
@@ -60,10 +61,15 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
                 description,
                 amount,
                 date,
+                category
             },
         });
 
-        return NextResponse.json(updatedNote);
+        if (updatedExpense) {
+            return NextResponse.json(updatedExpense);
+        } else {
+            return NextResponse.json({ message: 'No data found' }, { status: 404 });
+        }
     } catch (error) {
         if (error instanceof Error) {
             return NextResponse.json(
@@ -73,7 +79,7 @@ export async function PUT(req: Request, { params }: { params: { id: string } }) 
                 {
                     status: 500
                 }
-            )
+            );
         }
     }
 }

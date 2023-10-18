@@ -17,10 +17,10 @@ const Page = () => {
                 <form className="gap-y-4 flex flex-col">
                 <label htmlFor="email">E-mail</label>
                 <input type="email" name="email" id="email" placeholder="Ingrese su correo"
-                className="py-3 rounded-lg text-center"/>
+                className="py-3 rounded-lg text-center border-2"/>
                 <label htmlFor="password">Contraseña</label>
                 <input type="password" name="password" id="password" placeholder="Ingrese su contraseña"
-                className="py-3 rounded-lg text-center"/>
+                className="py-3 rounded-lg text-center border-2"/>
                 <button className="bg-slate-950 font-semibold text-white rounded-md py-2 mt-4"
                 type="submit">Sign in</button>
                 </form>

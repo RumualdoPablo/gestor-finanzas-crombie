@@ -4,7 +4,7 @@ import  prisma  from "@/libs/prisma"
 export async function GET() {
     try {
         const expenses = await prisma.expense.findMany()
-        return NextResponse.json(expenses)
+        return NextResponse.json(expenses,{status:200})
     } catch (error) {
         if (error instanceof Error) {
             return NextResponse.json(

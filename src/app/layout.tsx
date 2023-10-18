@@ -1,10 +1,11 @@
 
 import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lato, Plus_Jakarta_Sans } from "next/font/google";
 import "@/app/global.css"
 
-const inter = Inter({ subsets: ["latin"] });
+export const lato = Lato({ subsets: ["latin"], weight: ["400","700"] });
+const jakarta = Plus_Jakarta_Sans({subsets:["latin"]})
 
 export const metadata: Metadata = {
     title: "Gastos Crombie",
@@ -18,7 +19,7 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body className={jakarta.className}>
                 <Navbar/>
                 {children}
             </body>

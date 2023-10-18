@@ -1,6 +1,7 @@
 import "@/app/global.css"
 import prisma from "@/libs/prisma"
 import Link from "next/link"
+import ExpensesButtons from "@/components/ExpensesButtons"
 
 export default async function Page() {
     const allExpenses = await prisma.expense.findMany()
@@ -15,6 +16,9 @@ export default async function Page() {
                     <p>{expense.description}</p>
                     <p>{expense.amount}</p>
                     <p>{expense.category}</p>
+                    <div>
+                        <ExpensesButtons productId={expense.id}/>
+                    </div>
                 </div>
             ))}
             <Link href="/expenses/new" className="p-4 border-2 m-2 bg-green-300 rounded-lg hover:bg-green-500"> Agregar otro gasto </Link>
