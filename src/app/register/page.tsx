@@ -4,11 +4,7 @@ import { registerForm } from "@/interfaces/registerForm";
 import React, { useState, FormEvent } from "react";
 import Image from "next/image";
 import { UserAuth } from "@/context/AuthContext";
-import {
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-} from "firebase/auth";
-import { auth } from "@/firebase";
+import { validateRegistrationForm } from "../utils/RegisterFormValidation";
 
 function Page() {
   const [formData, setFormData] = useState<registerForm>({
@@ -16,7 +12,9 @@ function Page() {
     email: "",
     password: "",
     confirmPassword: "",
+    profilePictureURL: "https://unavatar.io/reddit/kikobeats",
   });
+
   const [error, setError] = useState("");
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,54 +24,22 @@ function Page() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    const validationError = validateRegistrationForm(formData);
 
-    if (
-      !formData.name ||
-      !formData.email ||
-      !formData.password ||
-      !formData.confirmPassword
-    ) {
-      setError("Todos los campos son obligatorios.");
-      console.log("Form validation error: Todos los campos son obligatorios.");
-      return;
-    }
-
-    if (formData.password !== formData.confirmPassword) {
-      setError("Las contraseñas no coinciden.");
-      console.log("Form validation error: Las contraseñas no coinciden.");
-      return;
-    }
-
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d).{8,}$/;
-    if (!passwordRegex.test(formData.password)) {
-      setError(
-        "La contraseña debe tener al menos 8 caracteres, incluyendo letras, números y un carácter especial."
-      );
-      console.log(
-        "Form validation error: La contraseña no cumple con los requisitos."
-      );
+    if (validationError) {
+      setError(validationError);
       return;
     }
 
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        formData.email,
-        formData.password
-      );
-      await sendEmailVerification(userCredential.user);
-      setError("");
-      console.log(
-        "Usuario registrado exitosamente. Se ha enviado un correo de verificación."
-      );
+      await registerUser(formData);
     } catch (error) {
       setError("Error al registrar el usuario. Por favor, inténtalo de nuevo.");
       console.error("Error al registrar el usuario:", error);
     }
   };
 
-  const { googleSignIn } = UserAuth();
+  const { googleSignIn, registerUser } = UserAuth();
 
   const handleSignIn = async () => {
     try {
@@ -164,10 +130,14 @@ function Page() {
                   />
                 </div>
               </div>
-              {error && <div className="text-red-500 mb-4 flex justify-center">{error}</div>}
+              {error && (
+                <div className="text-red-500 mb-4 flex justify-center">
+                  {error}
+                </div>
+              )}
               <div className="mb-6 text-center flex justify-center gap-8">
                 <Button type="submit">Register</Button>
-                <Button onClick={handleSignIn}>Register with google</Button>
+                <Button onClick={handleSignIn}>Login with google</Button>
               </div>
               <hr className="mb-6 border-t" />
               <div className="text-center">

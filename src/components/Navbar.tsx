@@ -4,15 +4,7 @@ import React from "react";
 import { UserAuth } from "../context/AuthContext";
 
 const Navbar = () => {
-  const { user, googleSignIn, logOut } = UserAuth();
-
-  const handleSignIn = async () => {
-    try {
-      await googleSignIn();
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { user, logOut } = UserAuth();
 
   const hanldeSignOut = async () => {
     try {
@@ -33,16 +25,20 @@ const Navbar = () => {
         <li className="p-2 cursor-pointer">
           <Link href="/about">About</Link>
         </li>
-        <li className="p-2 cursor-pointer">
-          <Link href="/profile">Profile</Link>
-        </li>
+        {user && (
+          <li className="p-2 cursor-pointer">
+            <Link href={`/profile/${user.uid}`}>Profile</Link>
+          </li>
+        )}
       </ul>
       {!user ? (
         <ul className="flex">
-          <li onClick={handleSignIn} className="p-2 cursor-pointer">
-            Login
+          <li className="p-2 cursor-pointer">
+            <Link href="/login">Login</Link>
           </li>
-          <Link href="/register">Register</Link>
+          <li className="p-2 cursor-pointer">
+            <Link href="/register">Register</Link>
+          </li>
         </ul>
       ) : (
         <div>
