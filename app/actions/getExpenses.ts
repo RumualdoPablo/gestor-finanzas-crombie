@@ -1,5 +1,5 @@
 import prisma from "@/app/libs/prisma"
-import getCurrentUser from "./getCurrentSesion"
+import getCurrentUser from "./getCurrentUser"
 
 export async function getExpenses() {
     try {
