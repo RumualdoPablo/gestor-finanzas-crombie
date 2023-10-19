@@ -1,4 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  experimental: {
+    typedRoutes: true,
+    serverComponentsExternalPackages: ['@tremor/react'],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

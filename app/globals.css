@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body{
+  @apply min-h-screen 
+}
+
+header{
+  @apply p-8 w-screen flex justify-between
+}
+
+header div{
+  @apply flex gap-2 items-center
+}
