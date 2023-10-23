@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import { Lato, Plus_Jakarta_Sans } from "next/font/google";
 import "@/app/global.css"
+import AuthProvider from "@/context/AuthProvider";
 
 export const lato = Lato({ subsets: ["latin"], weight: ["400","700"] });
 const jakarta = Plus_Jakarta_Sans({subsets:["latin"]})
@@ -20,8 +21,10 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={jakarta.className}>
+                <AuthProvider>
                 <Navbar/>
                 {children}
+                </AuthProvider>
             </body>
         </html>
     );
