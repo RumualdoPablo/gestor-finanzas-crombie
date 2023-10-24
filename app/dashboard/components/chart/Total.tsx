@@ -10,17 +10,17 @@ const Total: React.FC<DataProps> = ({ expenses, incomes }) => {
 
     const totalExpenses = getTotalofData(expenses)
     const totalIncomes = getTotalofData(incomes)
-    const balance = totalExpenses - totalIncomes
+    const balance = totalIncomes - totalExpenses
 
     return (
         <>
             <Card className='w-full md:w-2/3 md:mx-auto mx-0' decoration="top" decorationColor="cyan">
                 <Flex alignItems="start">
                     <Text className='text-xs font-bold'>BALANCE</Text>
-                    <BadgeDelta 
+                    <BadgeDelta
                         deltaType={
                             balance > 0 ? 'increase' : 'decrease'
-                        } 
+                        }
                     />
                 </Flex>
                 <Flex
@@ -29,7 +29,7 @@ const Total: React.FC<DataProps> = ({ expenses, incomes }) => {
                     className="truncate space-x-3"
                 >
                     <Metric className={balance > 0 ? 'text-green-400' : 'text-red-400'}>
-                        {balance} €
+                        $ {balance} 
                     </Metric>
                 </Flex>
             </Card>
@@ -44,7 +44,9 @@ const Total: React.FC<DataProps> = ({ expenses, incomes }) => {
                     alignItems="baseline"
                     className="truncate space-x-3"
                 >
-                    <Metric className='text-green-400'>{totalIncomes} €</Metric>
+                    <Metric className='text-green-400'>
+                        $ {totalIncomes} 
+                    </Metric>
                 </Flex>
             </Card>
 
@@ -58,7 +60,9 @@ const Total: React.FC<DataProps> = ({ expenses, incomes }) => {
                     alignItems="baseline"
                     className="truncate space-x-3"
                 >
-                    <Metric className='text-red-400'>{totalExpenses} €</Metric>
+                    <Metric className='text-red-400'>
+                        $ {totalExpenses} 
+                    </Metric>
                 </Flex>
             </Card>
         </>

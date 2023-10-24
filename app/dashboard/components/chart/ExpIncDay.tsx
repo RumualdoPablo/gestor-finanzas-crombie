@@ -77,7 +77,7 @@ const ExpIncDay: React.FC<DataProps> = ({ expenses, incomes }) => {
     }).flat()
 
   const dataFormatter: ValueFormatter = (number: number) => {
-    return Intl.NumberFormat("its").format(number).toString() + "€";
+    return "$" + Intl.NumberFormat("its").format(number).toString() ;
   }
 
   return (
