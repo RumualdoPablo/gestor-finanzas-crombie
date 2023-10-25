@@ -25,7 +25,6 @@ export async function POST(request: Request) {
       data: {
         description,
         amount: amountNumber,
-        date,
         userId: 4,
       },
     });
