@@ -1,13 +1,18 @@
-import { withAuth } from 'next-auth/middleware'
+// import { withAuth } from 'next-auth/middleware'
 
-export default withAuth({
-    pages: {
-        signIn: '/dashboard',
-    }
-})
+// export default withAuth({
+//     pages: {
+//         signIn: '/dashboard',
+//     }
+// })
 
-export const config = {
-    matcher: [
-        "/dashboard"
-    ]
+// export const config = {
+//     matcher: [
+//         "/dashboard"
+//     ]
+// }
+
+export const middleware = () => {
+    console.log("Hola");
+    
 }

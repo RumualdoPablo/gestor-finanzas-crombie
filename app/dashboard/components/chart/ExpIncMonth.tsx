@@ -1,4 +1,4 @@
-import { DataProps } from "@/app/types"
+import { DataProps } from "@/types"
 import { Card, Title, BarChart, ValueFormatter } from "@tremor/react"
 
 const ExpIncMonth: React.FC<DataProps> = ({ expenses, incomes }) => {

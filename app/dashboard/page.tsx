@@ -1,6 +1,6 @@
 
-import { getExpenses } from "../actions/getExpenses"
-import { getIncomes } from "../actions/getIncomes"
+import { getExpenses } from "../../actions/getExpenses"
+import { getIncomes } from "../../actions/getIncomes"
 import HeaderDashboard from "./components/HeaderDashboard"
 import TableDashboard from "./components/TableDashboard"
 

@@ -1,4 +1,4 @@
-import { DataProps } from "@/app/types";
+import { DataProps } from "@/types";
 import { Card, Title, LineChart, ValueFormatter } from "@tremor/react";
 import { getFormattedMonth, getFormattedDay, updateResult } from "./DataFunctions";
 
@@ -66,6 +66,8 @@ const ExpIncDay: React.FC<DataProps> = ({ expenses, incomes }) => {
   const expenseData = calculateData(expenses, "Expenses");
   const incomeData = calculateData(incomes, "Incomes");
 
+  console.log(expenseData,incomeData);
+  
   const chartData = expenseData.map((expenseEntry) => {
 
       const incomeEntry = incomeData.find(

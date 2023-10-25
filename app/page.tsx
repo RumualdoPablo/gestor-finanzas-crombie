@@ -1,6 +1,6 @@
 "use client"
 
-import NavBar from "@/app/components/NavBar"
+import NavBar from "@/components/NavBar"
 import hero from "../public/hero.json"
 import Lottie from "lottie-react"
 

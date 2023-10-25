@@ -1,17 +1,17 @@
-import prisma from "@/app/libs/prisma"
+import prisma from "@/libs/prisma"
 import getCurrentUser from "./getCurrentUser"
 
 export async function getExpenses() {
     try {
       const currentUser = await getCurrentUser();
   
-      if (!currentUser) {
-        throw new Error("User not authenticated");
-      }
+      // if (!currentUser) {
+      //   throw new Error("User not authenticated");
+      // }
   
       const expenses = await prisma.expense.findMany({
         where: {
-          userId: currentUser.id
+          userId: 4
         }
       });
   

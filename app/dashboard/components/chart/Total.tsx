@@ -1,4 +1,4 @@
-import { DataProps } from '@/app/types'
+import { DataProps } from '@/types'
 import { Grid, Card, Flex, BadgeDelta, Metric, Text } from '@tremor/react'
 import React from 'react'
 

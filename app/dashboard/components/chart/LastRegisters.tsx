@@ -1,4 +1,4 @@
-import { DataProps } from "@/app/types"
+import { DataProps } from "@/types"
 import { Expense, Income } from "@prisma/client"
 import { Text, Table, TableHead, TableRow, 
     TableHeaderCell, TableBody, 

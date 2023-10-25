@@ -13,8 +13,9 @@ const HeaderDashboard = () => {
 
   useEffect(() => {
     if (session?.status !== "authenticated") {
-      console.log("Authenticated")
-      router.push("/")
+      console.log("Not authenticated")
+      // router.push("/")
+      {/*Descomentar el router.push cuando termine*/}
     }
   }, [session?.status, router])
 

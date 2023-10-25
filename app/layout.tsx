@@ -1,7 +1,7 @@
-import AuthContext from './context/AuthContext'
+import AuthContext from '../context/AuthContext'
 import './globals.css'
 import { Inter } from 'next/font/google'
-import ToasterAlert from './components/Toast'
+import ToasterAlert from '../components/Toast'
 
 const inter = Inter({ subsets: ['latin'] })
 
