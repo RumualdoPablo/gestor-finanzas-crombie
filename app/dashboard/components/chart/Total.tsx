@@ -29,7 +29,7 @@ const Total: React.FC<DataProps> = ({ expenses, incomes }) => {
                     className="truncate space-x-3"
                 >
                     <Metric className={balance > 0 ? 'text-green-400' : 'text-red-400'}>
-                        $ {balance} 
+                        $ {balance !== 0 ? balance : "0"} 
                     </Metric>
                 </Flex>
             </Card>
