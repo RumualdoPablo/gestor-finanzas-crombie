@@ -3,6 +3,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true
   },
+  //Quitar lo de ignoreBuild
   experimental: {
     typedRoutes: true,
     serverComponentsExternalPackages: ['@tremor/react'],

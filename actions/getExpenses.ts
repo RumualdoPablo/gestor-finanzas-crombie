@@ -11,7 +11,7 @@ export async function getExpenses() {
   
       const expenses = await prisma.expense.findMany({
         where: {
-          userId: 4
+          userId: 1
         }
       });
   
