@@ -24,7 +24,7 @@ const LastRegisters: React.FC<DataProps> = ({ expenses, incomes }) => {
           <TableRow key={data.id}>
             <TableCell>{data.description}</TableCell>
             <TableCell>
-              <Text>{data.createdAt.toDateString()}</Text>
+              <Text>{data.date}</Text>
             </TableCell>
             <TableCell>
               {data.amount}
