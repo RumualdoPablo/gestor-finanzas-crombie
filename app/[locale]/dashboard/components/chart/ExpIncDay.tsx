@@ -85,7 +85,7 @@ const ExpIncDay: React.FC<DataProps> = ({ expenses, incomes }) => {
   return (
     <Card>
       <Title className="text-sm text-center font-bold uppercase">
-        EXPENSES/INCOMES PER DAY - {new Date().toLocaleString("default", { month: "long" })}
+        EXPENSES/INCOMES PER DAY 
       </Title>
       <LineChart
         className="mt-6"
