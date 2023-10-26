@@ -14,10 +14,11 @@ export interface RegisterForm {
 }
 
 export interface UserData {
-  name: string;
-  email: string;
-  profilePictureURL: string;
-}
+    uid: string | null
+    name: string | null;
+    email: string | null;
+    profilePictureURL: string | null;
+  }
 
 export interface AuthContextProps {
   user: UserData | null;

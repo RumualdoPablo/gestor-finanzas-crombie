@@ -4,6 +4,7 @@ import { db } from "@/firebase";
 import { doc, getDoc, collection } from "firebase/firestore";
 import { useParams, useRouter } from "next/navigation";
 import { UserAuth } from "@/context/AuthContext";
+import Expenses from "@/components/Expenses";
 
 interface UserData {
   name: string;
@@ -50,6 +51,7 @@ const Profile = () => {
       <h1>Welcome, {userData?.name}</h1>
       <p>Email: {userData?.email}</p>
       <img src={userData?.profilePictureURL} alt="User Avatar" />
+      <Expenses/>
     </div>
   );
 };

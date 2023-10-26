@@ -12,7 +12,11 @@ import {
 import { auth, db } from "@/firebase";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
-import { AuthContextProps, UserData, registerForm } from "@/interfaces/registerForm";
+import {
+  AuthContextProps,
+  UserData,
+  registerForm,
+} from "@/interfaces/registerForm";
 
 export const AuthContext = createContext<AuthContextProps | null>(null);
 
@@ -21,7 +25,7 @@ export const AuthContextProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  const [user, setUser] = useState<UserData | null>(null);
+  const [user, setUser] = useState<UserData>();
 
   const router = useRouter();
 
@@ -38,6 +42,8 @@ export const AuthContextProvider = ({
         const userData = {
           name: userCredential.user.displayName,
           email: userCredential.user.email,
+          profilePictureURL: userCredential.user.photoURL,
+          expenses: [],
         };
         await setDoc(userDocRef, userData);
       }
@@ -62,6 +68,7 @@ export const AuthContextProvider = ({
         name: formData.name,
         email: formData.email,
         profilePictureURL: formData.profilePictureURL,
+        expenses: [],
       };
       await setDoc(userDocRef, userData);
 
@@ -83,7 +90,6 @@ export const AuthContextProvider = ({
       console.log("User signed in successfully:", userCredential.user);
       router.push(`/profile/${userCredential.user.uid}`);
     } catch (error) {
-
       console.error("Error signing in:", error);
       throw error;
     }
