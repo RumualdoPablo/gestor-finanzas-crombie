@@ -1,10 +1,11 @@
 "use client"
-
+import { useTranslations } from "next-intl"
 import NavBar from "@/components/NavBar"
-import hero from "../public/hero.json"
+import hero from "@/public/hero.json"
 import Lottie from "lottie-react"
 
 export default function Home() {
+  const t = useTranslations("index")
   return (
     <div className="flex min-h-screen flex-col items-center">
       <NavBar />
@@ -15,11 +16,11 @@ export default function Home() {
             <h1 className="max-w-2xl mb-4 text-4xl font-extrabold 
             tracking-tight leading-none md:text-5xl xl:text-6xl"
             >
-              Control your household expenses with ease
+              {t("landing-title")}
             </h1>
             <p className="max-w-2xl mb-6 font-light text-gray-500 
               lg:mb-8 md:text-lg lg:text-xl">
-              Manage your money wisely and reach your financial goals.
+              {t("landing-subtitle")}
             </p>
           </div>
           <div className="hidden lg:mt-0 lg:col-span-5 lg:flex">
