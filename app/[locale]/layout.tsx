@@ -1,4 +1,4 @@
-import AuthContext from '@/context/AuthContext'
+import AuthContext, { AuthContextProvider } from '@/context/AuthContext'
 import { NextIntlClientProvider } from 'next-intl';
 import { notFound } from 'next/navigation';
 import './globals.css'
@@ -38,10 +38,10 @@ export default async function RootLayout({ children, params: {locale} }: RootLay
     <html lang={locale}>
       <body className={inter.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <AuthContext>
+        <AuthContextProvider>
             <ToasterAlert />
             {children}
-          </AuthContext>
+        </AuthContextProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -26,6 +26,7 @@ const TableDashboard: React.FC<DataProps> = ({ expenses, incomes }) => {
     setIncomeModalOpen(!isIncomeModalOpen)
   }
 
+  
   return (
     <>
       <TabList
